@@ -12,8 +12,9 @@ public class Main {
             System.out.println("1. Add Task");
             System.out.println("2. Update Task");
             System.out.println("3. Delete Task");
-            System.out.println("4. List Tasks");
-            System.out.println("5. Exit");
+            System.out.println("4. List All Tasks");
+            System.out.println("5. List Completed Tasks Only");
+            System.out.println("6. Exit");
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
             scanner.nextLine(); // Consume newline
@@ -32,6 +33,9 @@ public class Main {
                     taskManager.listTasks();
                     break;
                 case 5:
+                    taskManager.listCompletedTasks();
+                    break;
+                case 6:
                     System.out.println("Exiting...");
                     return;
                 default:

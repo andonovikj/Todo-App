@@ -26,6 +26,7 @@ public class TaskManager {
                  task.setDescription(description);
                  task.setCategory(category);
                  task.setIsCompleted(isCompleted);
+                 saveTasks();
              });
     }
 
@@ -37,6 +38,11 @@ public class TaskManager {
     public void listTasks()
     {
         tasks.forEach(System.out :: println);
+    }
+
+    public void listCompletedTasks(){
+        System.out.println("Completed tasks: ");
+        tasks.stream().filter(Task :: getIsCompleted).forEach(System.out :: println);
     }
 
     private void saveTasks() {
